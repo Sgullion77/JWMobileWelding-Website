@@ -1,0 +1,451 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#171b20">
+  <meta name="description" content="JW Mobile Welding offers mobile welding, metal repairs, and fabrication. Contact us to discuss your project.">
+  <title>JW Mobile Welding | Mobile Welding & Repairs</title>
+
+  <style>
+    :root {
+      --bg: #171b20;
+      --panel: #232a32;
+      --orange: #f5a623;
+      --white: #f8fafc;
+      --muted: #c0c8d1;
+      --border: #39434e;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 85px; }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--white);
+      line-height: 1.65;
+    }
+
+    a { color: inherit; }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      background: #171b20;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-weight: 900;
+      font-size: 1.3rem;
+      letter-spacing: 1px;
+      text-decoration: none;
+    }
+
+    .logo span { color: var(--orange); }
+
+    nav { display: flex; flex-wrap: wrap; gap: 22px; }
+
+    nav a {
+      text-decoration: none;
+      color: var(--muted);
+      font-weight: bold;
+      font-size: .95rem;
+    }
+
+    nav a:hover { color: var(--orange); }
+
+    .hero {
+      background:
+        radial-gradient(ellipse at 85% 15%, #414d59 0%, transparent 35%),
+        linear-gradient(125deg, #171b20, #29333e 70%, #171b20);
+      border-bottom: 4px solid var(--orange);
+    }
+
+    .hero-content {
+      max-width: 780px;
+      padding: 105px 0 110px;
+    }
+
+    .eyebrow {
+      color: var(--orange);
+      text-transform: uppercase;
+      font-weight: 800;
+      font-size: .82rem;
+      letter-spacing: 3px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(2.7rem, 7vw, 5rem);
+      line-height: 1.05;
+      letter-spacing: -2px;
+      margin-bottom: 24px;
+    }
+
+    h1 span { color: var(--orange); }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 650px;
+      font-size: 1.12rem;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 13px 22px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 800;
+    }
+
+    .primary { background: var(--orange); color: #171b20; }
+    .primary:hover { background: #dfa020; }
+
+    .secondary { border: 1px solid #768391; }
+    .secondary:hover { background: var(--panel); }
+
+    .highlights {
+      background: #20262d;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      text-align: center;
+      padding: 25px 0;
+    }
+
+    .highlight-grid strong {
+      display: block;
+      color: var(--orange);
+    }
+
+    .highlight-grid span {
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    section.content { padding: 80px 0; }
+
+    .section-heading {
+      max-width: 700px;
+      margin-bottom: 35px;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.15;
+      margin-bottom: 15px;
+    }
+
+    .section-heading p, .about p {
+      color: var(--muted);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 28px;
+    }
+
+    .number {
+      display: inline-flex;
+      width: 42px;
+      height: 42px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+      background: #45371f;
+      color: var(--orange);
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .card h3 { font-size: 1.2rem; margin-bottom: 10px; }
+    .card p { color: var(--muted); font-size: .96rem; }
+
+    .about {
+      background: #20262d;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 45px;
+      align-items: center;
+    }
+
+    .about p { margin-bottom: 16px; }
+
+    .about-panel {
+      background: var(--panel);
+      border-left: 4px solid var(--orange);
+      padding: 30px;
+      border-radius: 5px;
+    }
+
+    .about-panel h3 { margin-bottom: 12px; }
+
+    .contact-box {
+      background: linear-gradient(130deg, #30291e, var(--panel));
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 45px 25px;
+      text-align: center;
+    }
+
+    .contact-box p {
+      color: var(--muted);
+      max-width: 650px;
+      margin: 0 auto 25px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 26px 0;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    @media (max-width: 760px) {
+      .nav { align-items: flex-start; flex-direction: column; padding: 16px 0; }
+      nav { gap: 15px; }
+      .hero-content { padding: 75px 0; }
+      .highlight-grid, .cards, .about-grid { grid-template-columns: 1fr; }
+      section.content { padding: 58px 0; }
+      .about-grid { gap: 25px; }
+      h1 { letter-spacing: -1px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container nav">
+      <a class="logo" href="#home">JW <span>MOBILE WELDING</span></a>
+      <nav aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content">
+          <div class="eyebrow">Mobile Welding & Metal Repair</div>
+          <h1>Built Strong.<br><span>Welded On-Site.</span></h1>
+          <p>
+            JW Mobile Welding provides mobile welding and metalwork services.
+            Tell us about your project, where the work is needed, and what
+            you're looking to get done. We'll discuss the next steps with you.
+          </p>
+          <div class="buttons">
+            <a class="button primary" href="#contact">Request a Quote</a>
+            <a class="button secondary" href="#services">View Services</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="highlights">
+      <div class="container highlight-grid">
+        <div>
+          <strong>Mobile Service</strong>
+          <span>On-site project inquiries</span>
+        </div>
+        <div>
+          <strong>Repairs & Fabrication</strong>
+          <span>Discuss your metalwork needs</span>
+        </div>
+        <div>
+          <strong>Direct Communication</strong>
+          <span>Talk through your project</span>
+        </div>
+      </div>
+    </div>
+
+    <section class="content" id="services">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">What We Do</div>
+          <h2>Mobile Welding Services</h2>
+          <p>
+            Every job is different. Contact JW Mobile Welding to discuss
+            your project, the material involved, and service availability.
+          </p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <div class="number">01</div>
+            <h3>On-Site Welding</h3>
+            <p>
+              Mobile welding inquiries for metalwork that needs attention
+              at your location.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="number">02</div>
+            <h3>Metal Repairs</h3>
+            <p>
+              Discuss damaged or broken metal components and whether an
+              on-site repair may be suitable.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="number">03</div>
+            <h3>Custom Fabrication</h3>
+            <p>
+              Talk through your custom metalwork idea, measurements,
+              materials, and project requirements.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="number">04</div>
+            <h3>Equipment Repairs</h3>
+            <p>
+              Ask about welding repairs for equipment and metal components.
+              Work depends on the material and condition.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="number">05</div>
+            <h3>Residential Projects</h3>
+            <p>
+              Contact us about gates, brackets, metal fixtures, and other
+              residential metalwork.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="number">06</div>
+            <h3>Commercial Projects</h3>
+            <p>
+              Have a business or job-site welding requirement? Share the
+              details to discuss scope and availability.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="content about" id="about">
+      <div class="container about-grid">
+        <div>
+          <div class="eyebrow">About JW Mobile Welding</div>
+          <h2>Practical Welding for Real-World Jobs</h2>
+          <p>
+            Some metalwork is difficult to move. Mobile welding can offer
+            a convenient way to discuss repairs and fabrication where
+            the project is located.
+          </p>
+          <p>
+            JW Mobile Welding welcomes inquiries about welding projects,
+            repair needs, and custom metalwork. Get in touch with the
+            job details so we can discuss whether it is a good fit.
+          </p>
+        </div>
+
+        <div class="about-panel">
+          <h3>Tell Us About Your Project</h3>
+          <p>
+            When reaching out, include your location, a description of
+            the work, the material if known, and a few photos if available.
+            This helps us understand what the job may involve.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content" id="contact">
+      <div class="container">
+        <div class="contact-box">
+          <div class="eyebrow">Get in Touch</div>
+          <h2>Let's Discuss Your Welding Project.</h2>
+          <p>
+            Have a repair, fabrication idea, or on-site welding job?
+            Contact JW Mobile Welding to discuss your needs and request
+            a quote.
+          </p>
+
+          <!-- Replace the placeholder email below with his real business email. -->
+          <a class="button primary"
+             href="mailto:REPLACE-WITH-HIS-EMAIL@example.com?subject=JW%20Mobile%20Welding%20Quote">
+            Request a Quote by Email
+          </a>
+
+          <p style="margin-top: 20px; margin-bottom: 0; font-size: .88rem;">
+            Please replace the placeholder email address with the correct
+            business contact before publishing.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <div>&copy; <span id="year"></span> JW Mobile Welding. All rights reserved.</div>
+      <div>Mobile Welding & Metal Repair</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
