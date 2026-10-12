@@ -4,44 +4,88 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#171b20">
-  <meta name="description" content="JW Mobile Welding offers mobile welding, metal repairs, and fabrication. Contact us to discuss your project.">
-  <title>JW Mobile Welding | Mobile Welding & Repairs</title>
+  <meta name="theme-color" content="#171a1d">
+
+  <title>JW Mobile Welding | Mobile Welding in Athens, GA</title>
+  <meta name="description" content="JW Mobile Welding provides convenient mobile welding and metal repair services in Athens, Georgia, and surrounding areas. Contact James to discuss your project and request a quote.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://jwmobilewelding.com/">
+
+  <meta property="og:title" content="JW Mobile Welding | Athens, GA">
+  <meta property="og:description" content="Mobile welding. Reliable service. Built to get the job done. Contact JW Mobile Welding to discuss your project.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jwmobilewelding.com/">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%23171a1d'/%3E%3Cpath d='M18 28h64L68 45H32zM25 53h50L65 72H35z' fill='%23ff8a24'/%3E%3C/svg%3E">
 
   <style>
     :root {
-      --bg: #171b20;
-      --panel: #232a32;
-      --orange: #f5a623;
-      --white: #f8fafc;
-      --muted: #c0c8d1;
-      --border: #39434e;
+      --bg: #111315;
+      --panel: #1b1f22;
+      --panel-light: #24292d;
+      --text: #f4f5f6;
+      --muted: #b3bbc2;
+      --orange: #ff8a24;
+      --orange-light: #ffad5c;
+      --border: #343a3f;
+      --max-width: 1120px;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * { box-sizing: border-box; }
 
-    html { scroll-behavior: smooth; scroll-padding-top: 85px; }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
       background: var(--bg);
-      color: var(--white);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
       line-height: 1.65;
     }
 
     a { color: inherit; }
 
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid var(--orange-light);
+      outline-offset: 4px;
+    }
+
     .container {
-      width: min(1100px, 90%);
-      margin: auto;
+      width: min(var(--max-width), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      background: #0a0b0c;
+      border-bottom: 1px solid var(--border);
+      color: var(--muted);
+      font-size: .86rem;
+    }
+
+    .topbar-inner {
+      min-height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .topbar a {
+      color: var(--orange-light);
+      text-decoration: none;
     }
 
     header {
       position: sticky;
       top: 0;
-      z-index: 5;
-      background: #171b20;
+      z-index: 10;
+      background: rgba(17, 19, 21, .96);
       border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
     }
 
     .nav {
@@ -49,398 +93,831 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      gap: 24px;
     }
 
-    .logo {
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 46px;
+      height: 46px;
+      flex: 0 0 46px;
+      display: grid;
+      place-items: center;
+      background: var(--orange);
+      color: #171717;
       font-weight: 900;
-      font-size: 1.3rem;
-      letter-spacing: 1px;
-      text-decoration: none;
+      font-size: 1.1rem;
+      border-radius: 5px;
+      letter-spacing: -1px;
     }
 
-    .logo span { color: var(--orange); }
+    .brand-name {
+      font-weight: 900;
+      font-size: 1.12rem;
+      line-height: 1.2;
+      letter-spacing: .03em;
+    }
 
-    nav { display: flex; flex-wrap: wrap; gap: 22px; }
-
-    nav a {
-      text-decoration: none;
+    .brand-subtitle {
+      display: block;
+      margin-top: 4px;
       color: var(--muted);
-      font-weight: bold;
-      font-size: .95rem;
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .13em;
+      text-transform: uppercase;
     }
 
-    nav a:hover { color: var(--orange); }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      color: #d7dce0;
+      font-size: .94rem;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover { color: var(--orange-light); }
+
+    .nav-links .nav-cta {
+      background: var(--orange);
+      color: #171717;
+      padding: 11px 16px;
+      border-radius: 4px;
+      font-weight: 800;
+    }
+
+    .nav-links .nav-cta:hover {
+      background: var(--orange-light);
+      color: #171717;
+    }
 
     .hero {
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
       background:
-        radial-gradient(ellipse at 85% 15%, #414d59 0%, transparent 35%),
-        linear-gradient(125deg, #171b20, #29333e 70%, #171b20);
-      border-bottom: 4px solid var(--orange);
+        radial-gradient(ellipse at 80% 30%, rgba(255,138,36,.15), transparent 34%),
+        linear-gradient(115deg, #171a1d 0%, #111315 64%, #202326 100%);
     }
 
-    .hero-content {
-      max-width: 780px;
-      padding: 105px 0 110px;
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0 0 0 58%;
+      opacity: .12;
+      pointer-events: none;
+      background-image: repeating-linear-gradient(
+        135deg,
+        transparent 0 22px,
+        #aeb4ba 23px 24px,
+        transparent 25px 46px
+      );
+      mask-image: linear-gradient(to left, black, transparent);
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.3fr .7fr;
+      align-items: center;
+      gap: 56px;
+      padding-top: 96px;
+      padding-bottom: 100px;
     }
 
     .eyebrow {
-      color: var(--orange);
-      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--orange-light);
+      font-size: .8rem;
       font-weight: 800;
-      font-size: .82rem;
-      letter-spacing: 3px;
-      margin-bottom: 18px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 27px;
+      height: 3px;
+      background: var(--orange);
     }
 
     h1 {
-      font-size: clamp(2.7rem, 7vw, 5rem);
-      line-height: 1.05;
-      letter-spacing: -2px;
-      margin-bottom: 24px;
+      margin: 18px 0;
+      max-width: 720px;
+      font-size: clamp(2.8rem, 6vw, 5.1rem);
+      line-height: 1.02;
+      letter-spacing: -.055em;
     }
 
     h1 span { color: var(--orange); }
 
-    .hero p {
-      color: var(--muted);
-      max-width: 650px;
+    .hero-copy {
+      max-width: 610px;
+      color: #c2c8cd;
       font-size: 1.12rem;
-      margin-bottom: 30px;
     }
 
-    .buttons {
+    .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 14px;
+      gap: 13px;
+      margin-top: 30px;
     }
 
     .button {
-      display: inline-block;
-      padding: 13px 22px;
-      border-radius: 5px;
-      text-decoration: none;
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 13px 20px;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      background: var(--orange);
+      color: #171717;
       font-weight: 800;
+      text-decoration: none;
+      transition: transform .15s ease, background .15s ease;
     }
 
-    .primary { background: var(--orange); color: #171b20; }
-    .primary:hover { background: #dfa020; }
+    .button:hover {
+      background: var(--orange-light);
+      transform: translateY(-2px);
+    }
 
-    .secondary { border: 1px solid #768391; }
-    .secondary:hover { background: var(--panel); }
+    .button.secondary {
+      background: transparent;
+      color: var(--text);
+      border-color: #646b70;
+    }
 
-    .highlights {
-      background: #20262d;
+    .button.secondary:hover {
+      border-color: var(--orange);
+      color: var(--orange-light);
+    }
+
+    .hero-card {
+      position: relative;
+      padding: 30px;
+      border: 1px solid #41474c;
+      border-radius: 8px;
+      background: linear-gradient(145deg, rgba(42,47,52,.95), rgba(22,25,28,.95));
+      box-shadow: 0 25px 70px rgba(0,0,0,.24);
+    }
+
+    .hero-card .large-mark {
+      color: var(--orange);
+      font-size: 3.4rem;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -.08em;
+    }
+
+    .hero-card h2 {
+      margin: 17px 0 8px;
+      font-size: 1.5rem;
+      line-height: 1.25;
+    }
+
+    .hero-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .hero-card ul {
+      margin: 22px 0 0;
+      padding: 18px 0 0;
+      list-style: none;
+      border-top: 1px solid var(--border);
+    }
+
+    .hero-card li {
+      display: flex;
+      gap: 10px;
+      margin: 9px 0;
+      color: #e0e3e6;
+    }
+
+    .check {
+      color: var(--orange);
+      font-weight: 900;
+    }
+
+    .trust-strip {
       border-bottom: 1px solid var(--border);
+      background: #191c1f;
     }
 
-    .highlight-grid {
+    .trust-inner {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
+      padding-top: 23px;
+      padding-bottom: 23px;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
       text-align: center;
-      padding: 25px 0;
+      font-weight: 700;
     }
 
-    .highlight-grid strong {
-      display: block;
+    .trust-icon {
       color: var(--orange);
+      font-size: 1.25rem;
     }
 
-    .highlight-grid span {
-      color: var(--muted);
-      font-size: .9rem;
+    section.content-section {
+      padding: 88px 0;
     }
-
-    section.content { padding: 80px 0; }
 
     .section-heading {
       max-width: 700px;
-      margin-bottom: 35px;
+      margin: 0 auto 42px;
+      text-align: center;
     }
 
-    h2 {
+    .section-heading h2 {
+      margin: 12px 0;
       font-size: clamp(2rem, 4vw, 3rem);
-      line-height: 1.15;
-      margin-bottom: 15px;
+      line-height: 1.12;
+      letter-spacing: -.04em;
     }
 
-    .section-heading p, .about p {
+    .section-heading p {
       color: var(--muted);
+      font-size: 1.04rem;
     }
 
-    .cards {
+    .service-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
     }
 
-    .card {
-      background: var(--panel);
+    .service-card {
+      padding: 27px;
       border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 28px;
-    }
-
-    .number {
-      display: inline-flex;
-      width: 42px;
-      height: 42px;
-      align-items: center;
-      justify-content: center;
       border-radius: 6px;
-      background: #45371f;
-      color: var(--orange);
-      font-weight: 900;
-      margin-bottom: 18px;
+      background: var(--panel);
+      transition: border-color .2s ease, transform .2s ease;
     }
 
-    .card h3 { font-size: 1.2rem; margin-bottom: 10px; }
-    .card p { color: var(--muted); font-size: .96rem; }
+    .service-card:hover {
+      border-color: #a45e24;
+      transform: translateY(-3px);
+    }
 
-    .about {
-      background: #20262d;
+    .service-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 19px;
+      border: 1px solid #654323;
+      border-radius: 5px;
+      background: #2a2119;
+      color: var(--orange);
+      font-size: 1.35rem;
+    }
+
+    .service-card h3 {
+      margin: 0 0 9px;
+      font-size: 1.18rem;
+    }
+
+    .service-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .96rem;
+    }
+
+    .note {
+      margin: 24px auto 0;
+      max-width: 800px;
+      color: var(--muted);
+      text-align: center;
+      font-size: .9rem;
+    }
+
+    .about-section {
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
+      background: #191c1f;
     }
 
     .about-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 45px;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 58px;
       align-items: center;
     }
 
-    .about p { margin-bottom: 16px; }
-
     .about-panel {
-      background: var(--panel);
-      border-left: 4px solid var(--orange);
-      padding: 30px;
-      border-radius: 5px;
+      padding: 34px;
+      border: 1px solid #41474c;
+      border-radius: 7px;
+      background:
+        radial-gradient(ellipse at 80% 0%, rgba(255,138,36,.12), transparent 50%),
+        #202428;
     }
 
-    .about-panel h3 { margin-bottom: 12px; }
+    .about-panel .stamp {
+      display: inline-block;
+      padding: 8px 11px;
+      border: 1px solid #78502e;
+      color: var(--orange-light);
+      font-size: .77rem;
+      font-weight: 800;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .about-panel h3 {
+      margin: 20px 0 10px;
+      font-size: 1.9rem;
+      line-height: 1.15;
+    }
+
+    .about-panel p { color: var(--muted); }
+
+    .about-copy h2 {
+      margin: 12px 0;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      line-height: 1.1;
+      letter-spacing: -.04em;
+    }
+
+    .about-copy p { color: var(--muted); }
+
+    .about-points {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 25px;
+    }
+
+    .about-point {
+      padding: 14px;
+      border-left: 3px solid var(--orange);
+      background: #202428;
+      font-weight: 700;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .process-item { padding: 20px 5px; }
+
+    .process-number {
+      color: var(--orange);
+      font-size: .85rem;
+      font-weight: 900;
+      letter-spacing: .15em;
+    }
+
+    .process-item h3 {
+      margin: 10px 0 6px;
+      font-size: 1.2rem;
+    }
+
+    .process-item p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .contact-section {
+      border-top: 1px solid var(--border);
+      background:
+        radial-gradient(ellipse at 50% 100%, rgba(255,138,36,.10), transparent 52%),
+        #171a1d;
+    }
 
     .contact-box {
-      background: linear-gradient(130deg, #30291e, var(--panel));
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 45px 25px;
-      text-align: center;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      padding: 42px;
+      border: 1px solid #41474c;
+      border-radius: 7px;
+      background: rgba(28,32,35,.9);
     }
 
-    .contact-box p {
-      color: var(--muted);
-      max-width: 650px;
-      margin: 0 auto 25px;
+    .contact-box h2 {
+      margin: 12px 0;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      line-height: 1.1;
+      letter-spacing: -.04em;
     }
+
+    .contact-box p { color: var(--muted); }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 19px;
+    }
+
+    .contact-line {
+      padding-bottom: 17px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .contact-label {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--orange-light);
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .contact-line a {
+      color: var(--text);
+      overflow-wrap: anywhere;
+      text-decoration: none;
+    }
+
+    .contact-line a:hover { color: var(--orange-light); }
 
     footer {
-      border-top: 1px solid var(--border);
-      padding: 26px 0;
+      padding: 27px 0;
+      background: #0a0b0c;
       color: var(--muted);
-      font-size: .9rem;
+      font-size: .87rem;
     }
 
-    .footer-row {
+    .footer-inner {
       display: flex;
       justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px;
+      align-items: center;
+      gap: 18px;
     }
 
-    @media (max-width: 760px) {
-      .nav { align-items: flex-start; flex-direction: column; padding: 16px 0; }
-      nav { gap: 15px; }
-      .hero-content { padding: 75px 0; }
-      .highlight-grid, .cards, .about-grid { grid-template-columns: 1fr; }
-      section.content { padding: 58px 0; }
-      .about-grid { gap: 25px; }
-      h1 { letter-spacing: -1px; }
+    .footer-inner p { margin: 0; }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #d7dce0;
+      text-decoration: none;
+    }
+
+    .footer-links a:hover { color: var(--orange-light); }
+
+    @media (max-width: 850px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 34px;
+        padding-top: 70px;
+        padding-bottom: 70px;
+      }
+
+      .hero-card { max-width: 560px; }
+      .service-grid { grid-template-columns: repeat(2, 1fr); }
+      .about-grid { grid-template-columns: 1fr; gap: 30px; }
+      .contact-box { grid-template-columns: 1fr; gap: 20px; }
+    }
+
+    @media (max-width: 620px) {
+      .container { width: min(var(--max-width), calc(100% - 30px)); }
+
+      .topbar-inner {
+        justify-content: center;
+        text-align: center;
+        padding: 8px 0;
+      }
+
+      .topbar-inner span:first-child { display: none; }
+
+      .nav {
+        min-height: 68px;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+        padding-top: 14px;
+        padding-bottom: 14px;
+      }
+
+      .nav-links {
+        width: 100%;
+        gap: 17px;
+        flex-wrap: wrap;
+      }
+
+      .nav-links a { font-size: .87rem; }
+      .nav-links .nav-cta { padding: 8px 12px; }
+
+      .hero-inner { padding-top: 54px; padding-bottom: 54px; }
+      h1 { font-size: clamp(2.65rem, 13vw, 4rem); }
+      .hero-copy { font-size: 1rem; }
+      .hero-actions { flex-direction: column; align-items: stretch; }
+      .button { width: 100%; }
+
+      .trust-inner {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .trust-item { justify-content: flex-start; text-align: left; }
+      section.content-section { padding: 65px 0; }
+      .service-grid, .process-grid { grid-template-columns: 1fr; }
+      .service-card { padding: 23px; }
+      .about-points { grid-template-columns: 1fr; }
+      .about-panel, .contact-box { padding: 25px; }
+
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+      }
     }
   </style>
 </head>
 
 <body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span>Mobile Welding &amp; Metal Repair</span>
+      <span>Serving Athens, GA &amp; surrounding areas ·
+        <a href="mailto:James@JWMobileWelding.com">Email James</a>
+      </span>
+    </div>
+  </div>
+
   <header>
-    <div class="container nav">
-      <a class="logo" href="#home">JW <span>MOBILE WELDING</span></a>
-      <nav aria-label="Main navigation">
+    <nav class="container nav" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="JW Mobile Welding home">
+        <span class="brand-mark" aria-hidden="true">JW</span>
+        <span>
+          <span class="brand-name">JW MOBILE WELDING</span>
+          <span class="brand-subtitle">Mobile Welding · Athens, Georgia</span>
+        </span>
+      </a>
+
+      <div class="nav-links">
         <a href="#services">Services</a>
         <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
+        <a href="#process">How It Works</a>
+        <a class="nav-cta" href="#contact">Request a Quote ↗</a>
+      </div>
+    </nav>
   </header>
 
   <main>
     <section class="hero" id="home">
-      <div class="container">
-        <div class="hero-content">
-          <div class="eyebrow">Mobile Welding & Metal Repair</div>
-          <h1>Built Strong.<br><span>Welded On-Site.</span></h1>
-          <p>
-            JW Mobile Welding provides mobile welding and metalwork services.
-            Tell us about your project, where the work is needed, and what
-            you're looking to get done. We'll discuss the next steps with you.
+      <div class="container hero-inner">
+        <div>
+          <span class="eyebrow">Mobile welding · Athens, GA</span>
+          <h1>Welding that comes to <span>you.</span></h1>
+          <p class="hero-copy">
+            Need a metal repair or a custom welding project? JW Mobile Welding
+            brings mobile welding convenience to jobs around Athens, Georgia,
+            and surrounding communities. Tell us what you need, and let's
+            discuss the right solution for your project.
           </p>
-          <div class="buttons">
-            <a class="button primary" href="#contact">Request a Quote</a>
-            <a class="button secondary" href="#services">View Services</a>
+
+          <div class="hero-actions">
+            <a class="button" href="mailto:James@JWMobileWelding.com?subject=Mobile%20Welding%20Quote%20Request">
+              Request a Quote <span aria-hidden="true">↗</span>
+            </a>
+            <a class="button secondary" href="#services">Explore Services</a>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="JW Mobile Welding overview">
+          <div class="large-mark" aria-hidden="true">JW.</div>
+          <h2>On-site welding. Practical solutions.</h2>
+          <p>Mobile service for metal repairs and welding projects, with the job and your requirements in mind.</p>
+          <ul>
+            <li><span class="check">✓</span> Mobile service in the Athens area</li>
+            <li><span class="check">✓</span> Repair and fabrication inquiries</li>
+            <li><span class="check">✓</span> Direct communication about your project</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <div class="trust-strip">
+      <div class="container trust-inner">
+        <div class="trust-item">
+          <span class="trust-icon" aria-hidden="true">⌖</span>
+          Athens, Georgia &amp; nearby areas
+        </div>
+        <div class="trust-item">
+          <span class="trust-icon" aria-hidden="true">⚒</span>
+          Mobile welding convenience
+        </div>
+        <div class="trust-item">
+          <span class="trust-icon" aria-hidden="true">↗</span>
+          Discuss your project directly
+        </div>
+      </div>
+    </div>
+
+    <section class="content-section" id="services">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">What we do</span>
+          <h2>Welding services for your project.</h2>
+          <p>
+            From repairs to custom metalwork, every job starts with understanding
+            what needs to be done. Contact JW Mobile Welding to confirm service
+            availability for your specific project.
+          </p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">⚒</div>
+            <h3>Mobile Welding</h3>
+            <p>On-site welding inquiries for jobs where bringing the work to a shop isn't practical. Describe the location and the work needed.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">🔧</div>
+            <h3>Metal Repairs</h3>
+            <p>Discuss damaged or broken metal components and find out whether the repair is suitable for mobile welding.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">▤</div>
+            <h3>Custom Fabrication</h3>
+            <p>Have an idea or a specific metalwork project? Share your measurements, intended use, and requirements to discuss options.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">⌂</div>
+            <h3>Property &amp; Equipment</h3>
+            <p>Ask about welding and metal repair needs involving property, equipment, or other metal components.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">▥</div>
+            <h3>Structural Metalwork</h3>
+            <p>Contact us to discuss structural metalwork requirements. Applicable codes, engineering, and qualification requirements must be confirmed for each job.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">＋</div>
+            <h3>Other Welding Projects</h3>
+            <p>Not sure which service fits? Send a description or photos of the job, and we can discuss whether it's a project JW Mobile Welding can take on.</p>
+          </article>
+        </div>
+
+        <p class="note">
+          Services, materials, equipment, travel distance, and project suitability
+          are confirmed individually. Not every project or repair will be appropriate
+          for mobile welding.
+        </p>
+      </div>
+    </section>
+
+    <section class="content-section about-section" id="about">
+      <div class="container about-grid">
+        <div class="about-panel">
+          <span class="stamp">JW Mobile Welding</span>
+          <h3>Local service.<br>Real-world projects.</h3>
+          <p>
+            Based in the Athens, Georgia area, JW Mobile Welding helps customers
+            explore practical options for metal repairs and welding work without
+            automatically assuming the job needs to go to a shop.
+          </p>
+        </div>
+
+        <div class="about-copy">
+          <span class="eyebrow">About JW</span>
+          <h2>Let's talk about the job before the sparks fly.</h2>
+          <p>
+            Every project is different. The material, dimensions, condition,
+            location, access, and intended use all matter. A quick conversation
+            helps establish what the work involves and whether it's a good fit.
+          </p>
+          <p>
+            Whether you're a homeowner, property manager, contractor, or business
+            owner, reach out with the details. James can discuss the next steps
+            and whether an estimate or site visit is appropriate.
+          </p>
+
+          <div class="about-points">
+            <div class="about-point">Project-focused communication</div>
+            <div class="about-point">Local-area service inquiries</div>
+            <div class="about-point">Repair and fabrication discussions</div>
+            <div class="about-point">Quote requests by email</div>
           </div>
         </div>
       </div>
     </section>
 
-    <div class="highlights">
-      <div class="container highlight-grid">
-        <div>
-          <strong>Mobile Service</strong>
-          <span>On-site project inquiries</span>
-        </div>
-        <div>
-          <strong>Repairs & Fabrication</strong>
-          <span>Discuss your metalwork needs</span>
-        </div>
-        <div>
-          <strong>Direct Communication</strong>
-          <span>Talk through your project</span>
-        </div>
-      </div>
-    </div>
-
-    <section class="content" id="services">
+    <section class="content-section" id="process">
       <div class="container">
         <div class="section-heading">
-          <div class="eyebrow">What We Do</div>
-          <h2>Mobile Welding Services</h2>
-          <p>
-            Every job is different. Contact JW Mobile Welding to discuss
-            your project, the material involved, and service availability.
-          </p>
+          <span class="eyebrow">Simple process</span>
+          <h2>Here's how to get started.</h2>
+          <p>A straightforward way to explain your job and find out what comes next.</p>
         </div>
 
-        <div class="cards">
-          <article class="card">
-            <div class="number">01</div>
-            <h3>On-Site Welding</h3>
-            <p>
-              Mobile welding inquiries for metalwork that needs attention
-              at your location.
-            </p>
+        <div class="process-grid">
+          <article class="process-item">
+            <span class="process-number">STEP 01</span>
+            <h3>Tell us what you need</h3>
+            <p>Email James with a description of the work, the job location, the material if known, and any important measurements.</p>
           </article>
 
-          <article class="card">
-            <div class="number">02</div>
-            <h3>Metal Repairs</h3>
-            <p>
-              Discuss damaged or broken metal components and whether an
-              on-site repair may be suitable.
-            </p>
+          <article class="process-item">
+            <span class="process-number">STEP 02</span>
+            <h3>Share the details</h3>
+            <p>Include clear photos if possible, how the component is used, and any deadlines or access requirements.</p>
           </article>
 
-          <article class="card">
-            <div class="number">03</div>
-            <h3>Custom Fabrication</h3>
-            <p>
-              Talk through your custom metalwork idea, measurements,
-              materials, and project requirements.
-            </p>
-          </article>
-
-          <article class="card">
-            <div class="number">04</div>
-            <h3>Equipment Repairs</h3>
-            <p>
-              Ask about welding repairs for equipment and metal components.
-              Work depends on the material and condition.
-            </p>
-          </article>
-
-          <article class="card">
-            <div class="number">05</div>
-            <h3>Residential Projects</h3>
-            <p>
-              Contact us about gates, brackets, metal fixtures, and other
-              residential metalwork.
-            </p>
-          </article>
-
-          <article class="card">
-            <div class="number">06</div>
-            <h3>Commercial Projects</h3>
-            <p>
-              Have a business or job-site welding requirement? Share the
-              details to discuss scope and availability.
-            </p>
+          <article class="process-item">
+            <span class="process-number">STEP 03</span>
+            <h3>Discuss the quote</h3>
+            <p>Confirm the scope, availability, travel, materials, and pricing before scheduling any work.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="content about" id="about">
-      <div class="container about-grid">
-        <div>
-          <div class="eyebrow">About JW Mobile Welding</div>
-          <h2>Practical Welding for Real-World Jobs</h2>
-          <p>
-            Some metalwork is difficult to move. Mobile welding can offer
-            a convenient way to discuss repairs and fabrication where
-            the project is located.
-          </p>
-          <p>
-            JW Mobile Welding welcomes inquiries about welding projects,
-            repair needs, and custom metalwork. Get in touch with the
-            job details so we can discuss whether it is a good fit.
-          </p>
-        </div>
-
-        <div class="about-panel">
-          <h3>Tell Us About Your Project</h3>
-          <p>
-            When reaching out, include your location, a description of
-            the work, the material if known, and a few photos if available.
-            This helps us understand what the job may involve.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="content" id="contact">
+    <section class="content-section contact-section" id="contact">
       <div class="container">
         <div class="contact-box">
-          <div class="eyebrow">Get in Touch</div>
-          <h2>Let's Discuss Your Welding Project.</h2>
-          <p>
-            Have a repair, fabrication idea, or on-site welding job?
-            Contact JW Mobile Welding to discuss your needs and request
-            a quote.
-          </p>
+          <div>
+            <span class="eyebrow">Get in touch</span>
+            <h2>Have a welding job in mind?</h2>
+            <p>
+              Tell James what needs repairing, building, or fabricating.
+              Include the job location and photos when possible so he can
+              better understand what you're looking for.
+            </p>
+            <a class="button" href="mailto:James@JWMobileWelding.com?subject=JW%20Mobile%20Welding%20Quote%20Request&body=Hi%20James%2C%0A%0AI%27m%20looking%20for%20help%20with%20a%20welding%20project.%0A%0AProject%20description%3A%0AJob%20location%3A%0AMaterial%20(if%20known)%3A%0ATimeline%3A%0A%0AThank%20you.">
+              Email James for a Quote ↗
+            </a>
+          </div>
 
-          <James@JWMobileWelding.com>
-          <a class="button primary"
-             href="mailto:James@JWMobileWelding.com?subject=JW%20Mobile%20Welding%20Quote">
-            Request a Quote by Email
-          </a>
+          <div class="contact-details">
+            <div class="contact-line">
+              <span class="contact-label">General Inquiries &amp; Quotes</span>
+              <a href="mailto:James@JWMobileWelding.com">James@JWMobileWelding.com</a>
+            </div>
 
-          <p style="margin-top: 20px; margin-bottom: 0; font-size: .88rem;">
-            Please replace the placeholder email address with the correct
-            business contact before publishing.
-          </p>
+            <div class="contact-line">
+              <span class="contact-label">Billing &amp; Payments</span>
+              <a href="mailto:Payments@JWMobileWelding.com">Payments@JWMobileWelding.com</a>
+            </div>
+
+            <div class="contact-line">
+              <span class="contact-label">Service Area</span>
+              Athens, Georgia and surrounding areas
+            </div>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="container footer-row">
-      <div>&copy; <span id="year"></span> JW Mobile Welding. All rights reserved.</div>
-      <div>Mobile Welding & Metal Repair</div>
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> JW Mobile Welding. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="mailto:James@JWMobileWelding.com">Email James</a>
+      </div>
     </div>
   </footer>
 
